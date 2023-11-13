@@ -3,8 +3,8 @@ public class DoublyLinkedList {
   private Node head;
   private Node tail;
 
-  public void insertAtFront(int data) {
-    Node newNode = new Node(data);
+  public void insertAtFront(int value) {
+    Node newNode = new Node(value);
     if (head == null) {
       head = newNode;
       tail = newNode;
@@ -15,8 +15,8 @@ public class DoublyLinkedList {
     }
   }
 
-  public void insertAtEnd(int data) {
-    Node newNode = new Node(data);
+  public void insertAtEnd(int value) {
+    Node newNode = new Node(value);
     if (head == null) {
       head = newNode;
       tail = newNode;
@@ -29,8 +29,7 @@ public class DoublyLinkedList {
 
   public void deleteAtFront() {
     if (head == null) {
-      System.out.println("List is empty");
-      return;
+      return; // List is empty
     }
     if (head == tail) {
       head = null;
@@ -43,8 +42,7 @@ public class DoublyLinkedList {
 
   public void deleteAtEnd() {
     if (head == null) {
-      System.out.println("List is empty");
-      return;
+      return; // List is empty
     }
     if (head == tail) {
       head = null;
@@ -58,12 +56,11 @@ public class DoublyLinkedList {
   public void display() {
     Node current = head;
     if (head == null) {
-      System.out.println("List is empty");
-      return;
+      return; // List is empty
     }
     System.out.print("Nodes in the doubly linked list: ");
     while (current != null) {
-      System.out.print(current.data + " ");
+      System.out.print(current.value + " ");
       current = current.next;
     }
     System.out.println();
@@ -71,12 +68,12 @@ public class DoublyLinkedList {
 
   private class Node {
 
-    private int data;
+    private int value;
     private Node previous;
     private Node next;
 
-    public Node(int data) {
-      this.data = data;
+    public Node(int value) {
+      this.value = value;
     }
   }
 }
